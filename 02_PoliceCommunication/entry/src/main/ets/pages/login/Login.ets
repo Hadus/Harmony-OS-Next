@@ -64,7 +64,7 @@ struct LoginPage {
           Button('登陆').backgroundColor('#f40').width('100%')
             .type(ButtonType.Normal).bdRadius()
             .onClick(() => {
-              router.pushUrl({
+              router.replaceUrl({
                 url: 'pages/Index',
               })
             })

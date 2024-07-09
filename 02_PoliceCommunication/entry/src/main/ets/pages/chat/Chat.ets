@@ -7,6 +7,10 @@ import CONSTANTS from '../../common/constants/index'
   .padding({left: 5, right: 5})
 }
 
+interface navChatParamsInterface{
+  index: number
+}
+
 @Preview
 @Component
 export default struct Chat {
@@ -26,6 +30,8 @@ export default struct Chat {
   // private chatList: number[]  = [1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1]
   // list end
 
+  @Consume('navPathStack') navPathStack: NavPathStack
+
   build() {
     Column(){
       Row({space: 20}){
@@ -37,11 +43,16 @@ export default struct Chat {
       .justifyContent(FlexAlign.Start)
 
       List(){
-        ForEach(this.chatList, (ele:number ) => {
+        ForEach(this.chatList, (ele:number, index: number ) => {
           ListItem(){
             ChatItem()
           }.height(80)
           .padding({top:15, bottom:15 })
+          .onClick(() => {
+            const params: navChatParamsInterface = { index }
+            console.log('----', params.index)
+            this.navPathStack.pushPath({ name: 'chatContent', param: params })
+          })
         })
       }
       .scrollBar(BarState.Off)
@@ -52,7 +63,7 @@ export default struct Chat {
         endMargin: 5,
       })
     }.width('100%').height('100%')
-    .padding({left: 10, right: 10, top: 60})
+    .padding({left: 10, right: 10})
     .backgroundColor('#f9f9f9')
   }
 }

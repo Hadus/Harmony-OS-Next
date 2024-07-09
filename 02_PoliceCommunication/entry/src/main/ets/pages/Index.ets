@@ -11,9 +11,9 @@ import CONSTANTS from '../common/constants/index'
 struct IndexPage {
   /* 顶部 start */
   // title
-  @Builder NavTitle() {
+  @Builder NavTitleBuilder() {
     Column() {
-      Text('Title')
+      Text(this.toolbarList[this.activeIndex].value)
         .fontColor('#182431')
         .fontSize(24)
         .fontWeight(700)
@@ -23,9 +23,6 @@ struct IndexPage {
   navigationMenusList:NavigationMenuItem[] = [
     {value: '', icon: '/assets/images/avatar.png', action: ()=>{}},
     {value: '', icon: '/assets/images/avatar.png', action: ()=>{}},
-    {value: '', icon: '/assets/images/avatar.png', action: ()=>{}},
-    {value: '', icon: '/assets/images/avatar.png', action: ()=>{}},
-    {value: '', icon: 'resources/base/media/app_icon.png', action: ()=>{}},
   ]
   /* 顶部 end */
 
@@ -54,6 +51,11 @@ struct IndexPage {
   }
   /* toolbar end */
 
+  /* nav path stack 导航路径栈 start*/
+  // navPathStack: NavPathStack = new NavPathStack()
+  @Provide navPathStack: NavPathStack = new NavPathStack()
+  /* nav path stack 导航路径栈 end*/
+
   build() {
     Navigation() {
       if (this.activeIndex === 0) {
@@ -68,7 +70,8 @@ struct IndexPage {
         Temp()
       }
     }
-    .title(this.NavTitle)
+    .title(this.NavTitleBuilder)
+    .titleMode(NavigationTitleMode.Mini)
     .menus(this.navigationMenusList)
     .toolbarConfiguration(this.toolbarList)
   }

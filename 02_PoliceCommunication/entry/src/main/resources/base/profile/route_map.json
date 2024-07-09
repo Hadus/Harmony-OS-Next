@@ -1,0 +1,44 @@
+{
+  "routerMap": [
+    {
+      "name": "chatContent",
+      "pageSourceFile": "src/main/ets/pages/chat/ChatContent.ets",
+      "buildFunction": "ChatContentNavBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "aboutPoliceCommunication",
+      "pageSourceFile": "src/main/ets/pages/personal/AboutPoliceCommunication.ets",
+      "buildFunction": "AboutPoliceCommunicationNavBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "personalInfo",
+      "pageSourceFile": "src/main/ets/pages/personal/PersonalInfo.ets",
+      "buildFunction": "PersonalInfoNavBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "PersonalQrCode",
+      "pageSourceFile": "src/main/ets/pages/personal/PersonalQrCode.ets",
+      "buildFunction": "PersonalQrCodeNavBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "Setting",
+      "pageSourceFile": "src/main/ets/pages/personal/Setting.ets",
+      "buildFunction": "SettingNavBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}

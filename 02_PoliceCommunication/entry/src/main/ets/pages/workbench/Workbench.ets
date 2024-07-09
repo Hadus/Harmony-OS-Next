@@ -13,7 +13,7 @@ export default struct Workbench {
       AppListBlock({title: `${CONSTANTS.DEPARTMENT}${CONSTANTS.OFFICE}${CONSTANTS.APP}`})
 
     }.width('100%').height('100%')
-    .padding({left: 10, right: 10, top: 60})
+    .padding({left: 10, right: 10})
     .backgroundColor('#eee')
   }
 }

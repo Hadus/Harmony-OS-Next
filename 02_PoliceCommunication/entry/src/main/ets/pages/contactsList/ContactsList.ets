@@ -73,7 +73,6 @@ export default struct ContactsList {
       }
       .padding({left: 10, right: 10})
     }.width('100%').height('100%')
-    .padding({top: 60})
     .backgroundColor('#f9f9f9')
   }
 }
