@@ -1,9 +1,15 @@
+
+import ChatContentShowBox from './ChatContentShowBox'
+import ChatContentSendBox from './ChatContentSendBox'
 //
 import { ChatItemInterface } from '../../common/interfaces/index'
 
 @Builder
 export function ChatContentNavBuilder(){
   ChatContent()
+}
+interface navChatParamsInterface{
+  index: number
 }
 
 @Preview
@@ -17,19 +23,16 @@ struct ChatContent {
     isNonDisturbance: true,
     unreadMsg: 0,
   }
+  @State pathInfo: NavPathInfo = {name: ''}
 
-  @Consume('navPathStack') navPathStack: NavPathStack
+  // @Consume('navPathStack') navPathStack: NavPathStack
 
   build() {
     NavDestination(){
-      Text(this.chatItemContent.chatTitle).width('100%')
-        .fontSize(17)
-        .height('50%')
-      Button('click me')
-        .onClick(()=>{
-          console.log('++++', this.navPathStack.getParamByName('chatContent'))
-        })
+      Stack({alignContent: Alignment.Bottom}){
+        ChatContentShowBox()
+        ChatContentSendBox()
+      }
     }.title('谁+聊天')
-    .menus()
   }
 }

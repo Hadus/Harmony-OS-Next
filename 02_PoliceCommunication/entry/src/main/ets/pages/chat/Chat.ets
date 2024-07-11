@@ -26,8 +26,8 @@ export default struct Chat {
   // appTop end
 
   // list start
-  private chatList: number[]  = [1,2,3,1]
-  // private chatList: number[]  = [1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1]
+  // private chatList: number[]  = [1,2,3,1]
+  private chatList: number[]  = [1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1]
   // list end
 
   @Consume('navPathStack') navPathStack: NavPathStack
@@ -49,13 +49,13 @@ export default struct Chat {
           }.height(80)
           .padding({top:15, bottom:15 })
           .onClick(() => {
-            const params: navChatParamsInterface = { index }
-            console.log('----', params.index)
-            this.navPathStack.pushPath({ name: 'chatContent', param: params })
+            const param: navChatParamsInterface = { index }
+            console.log('----', param.index)
+            this.navPathStack.pushPath({ name: 'chatContent', param})
           })
         })
       }
-      .scrollBar(BarState.Off)
+      .scrollBar(BarState.Auto)
       .divider({
         strokeWidth: 1,
         color: '#eaeaea',
@@ -63,7 +63,7 @@ export default struct Chat {
         endMargin: 5,
       })
     }.width('100%').height('100%')
-    .padding({left: 10, right: 10})
+    .padding({left: 10, right: 10, bottom: 50})
     .backgroundColor('#f9f9f9')
   }
 }

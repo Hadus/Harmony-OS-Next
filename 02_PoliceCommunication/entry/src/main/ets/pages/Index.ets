@@ -53,11 +53,11 @@ struct IndexPage {
 
   /* nav path stack 导航路径栈 start*/
   // navPathStack: NavPathStack = new NavPathStack()
-  @Provide navPathStack: NavPathStack = new NavPathStack()
+  @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack()
   /* nav path stack 导航路径栈 end*/
 
   build() {
-    Navigation() {
+    Navigation(this.navPathStack) {
       if (this.activeIndex === 0) {
         Chat()
       } else if (this.activeIndex === 1) {
