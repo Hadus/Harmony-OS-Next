@@ -1,6 +1,7 @@
 //
 import {ChatItemInterface} from '../../common/interfaces/index'
 
+@Preview
 @Component
 export default struct ChatItem {
   private chatItemContent: ChatItemInterface = {
@@ -12,8 +13,16 @@ export default struct ChatItem {
     unreadMsg: 0,
   }
 
+
   build() {
     Row({space: 8}){
+       // 用 badge 不行，有4种情况
+      // - 未屏蔽
+      //    - 无消息
+      //    - 有消息
+      // - 已屏蔽
+      //    - 无消息
+      //    - 有消息
       Image('/assets/images/chat-group.png')
         .width(50).borderRadius(5).height('100%')
       Column(){

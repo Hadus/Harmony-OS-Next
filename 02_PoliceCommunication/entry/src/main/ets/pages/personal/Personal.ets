@@ -53,7 +53,7 @@ export default struct Personal {
               Text('>').width(10).fontSize(18).fontColor('#666')
             }.height(60)
             .onClick(() => {
-              this.navPathStack.pushPath({ name: 'chatContent' })
+              this.navPathStack.pushPath({ name: 'personalInfo' })
             })
             Divider().strokeWidth(1).color('#f0f0f0')
             Row({ space: 10}){
@@ -62,7 +62,7 @@ export default struct Personal {
               Text('>').width(10).fontSize(18).fontColor('#666')
             }.height(60)
             .onClick(() => {
-              this.navPathStack.pushPath({ name: 'chatContent' })
+              this.navPathStack.pushPath({ name: 'personalQrCode' })
             })
           }
         }.listItemStyle()

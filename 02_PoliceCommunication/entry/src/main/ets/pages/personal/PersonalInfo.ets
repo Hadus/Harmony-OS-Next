@@ -18,6 +18,6 @@ struct PersonalInfo {
   build() {
     NavDestination(){
       Text('设置').fontColor('#fff').fontSize(18)
-    }.title('--')
+    }.title('--个人中心')
   }
 }

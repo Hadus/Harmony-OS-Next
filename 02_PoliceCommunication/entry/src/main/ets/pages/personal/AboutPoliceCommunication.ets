@@ -17,7 +17,16 @@ struct AboutPoliceCommunication {
 
   build() {
     NavDestination(){
-      Text('设置').fontColor('#fff').fontSize(18)
-    }.title('--')
+      Column({space: 5}){
+        Image('/assets/images/logo.png').height(60).aspectRatio(1)
+          .borderRadius(8)
+        Text('全国警信').fontSize(20)
+        Text('99909002').fontColor('#888')
+      }
+      Column(){
+        Text('版本更新')
+        Text('重要提示')
+      }.width('100%')
+    }.title('--关于')
   }
 }

@@ -17,7 +17,7 @@ export default struct Setting {
 
   build() {
     NavDestination(){
-      Text('设置').fontColor('#fff').fontSize(18)
+      Text('设置')
     }.title('--')
   }
 }
