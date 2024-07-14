@@ -3,6 +3,18 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "primary_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "top_bar_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "tool_background",
+      "value": "#FFFFFF"
     }
   ]
 }

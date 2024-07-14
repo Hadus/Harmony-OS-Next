@@ -34,6 +34,9 @@ export default struct Chat {
 
   build() {
     Column(){
+      Search({
+        placeholder: '搜索'
+      })
       Row({space: 20}){
         Button(CONSTANTS.ALL).chooseBtnStyle().fontColor(Color.Blue)
         Button(`@${CONSTANTS.ME}`).chooseBtnStyle()
